@@ -1,0 +1,22 @@
+{
+  "name": "chapter2",
+  "version": "0.0.1",
+  "description": "learn code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bladestone01/nodejs-learn.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "tony chen, chengjunf2313_cn@126.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bladestone01/nodejs-learn/issues"
+  },
+  "homepage": "https://github.com/bladestone01/nodejs-learn#readme"
+}
