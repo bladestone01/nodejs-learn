@@ -4,7 +4,11 @@
   "description": "learn code",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm run clean && babel src -d target --watch",
+    "compile": "npm run clean && babel src -d target",
+    "clean": "rm -fR target",
+    "dev":"export NODE_ENV=dev && export DEBUG=test1:* && node target/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,17 @@
   "bugs": {
     "url": "https://github.com/bladestone01/nodejs-learn/issues"
   },
-  "homepage": "https://github.com/bladestone01/nodejs-learn#readme"
+  "homepage": "https://github.com/bladestone01/nodejs-learn#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.2",
+    "multiparty": "^4.1.3",
+    "project-core": "^2.1.0",
+    "serve-static": "^1.13.1",
+    "server-static": "^2.0.5"
+  }
 }
