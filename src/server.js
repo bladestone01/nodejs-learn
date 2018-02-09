@@ -36,13 +36,14 @@ $.init.load(path.resolve(__dirname, 'init', 'mongodb.js'));
 //init the mongodb model
 $.init.load(path.resolve(__dirname, 'models'));
 
-$.init.load(path.resolve(__dirname, 'methods'));
+$.init.load(path.resolve(__dirname, 'methods', 'user.js'));
 // init the express
 $.init.load(path.resolve(__dirname, 'init', 'express.js'));
 $.init.load(path.resolve(__dirname, 'routes'));
 
 
-$.init.load(path.resolve(__dirname, '.', 'test1.js'));
+//$.init.load(path.resolve(__dirname, 'cases'));
+
 
 //initialization
 $.init((err) => {
@@ -58,7 +59,9 @@ $.init((err) => {
      password: '123456',
      nickname: 'test user'
   });
+
   item.save(console.log);
 
+  require("./cases/test1");
   debug("test in server.js");
 });

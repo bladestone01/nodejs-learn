@@ -6,15 +6,16 @@
 import validator from 'validator';
 
 module.exports = function(done) {
-  
    $.method('user.add').check({
       name : {required:true, validate: (v) => validator.islength(v, {min:4, max:20})},
       email: {required: true, validate: (v) => validator.isEmail(v)},
       password: {required: true, validate: (v) => validator.islength(v, {min:6})}
    });
+
+  console.log("user add initialization message....");
    $.method('user.add').register(async function(params, callback) {
       params.name = params.name.toLowerCase();
-
+      console.log(" invoke user add action, and see what it happens...");
       {
         const user = await $.method('user.get').call({email : params.email});
         if (user) return callback(new Error(`user ${params.email} already exists`));

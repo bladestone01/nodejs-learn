@@ -1,6 +1,11 @@
 'use strict';
+
+/**
+ *
+ */
 module.exports = function(done) {
-   $.route.post("/user/login", async function(req, res, next) {
+
+   $.router.post("/user/login", async function(req, res, next) {
      try{
       if (!user) return next(new Error(" user does not exist"));
 
@@ -14,11 +19,11 @@ module.exports = function(done) {
     }
    });
 
-   $.route.post('/api/logout', async function(req, res, next){
+   $.router.post('/api/logout', async function(req, res, next){
 
    });
 
-   $.route.post('/api/signup', async function(req, res, next){
+   $.router.post('/api/signup', async function(req, res, next){
 
    });
 };

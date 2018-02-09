@@ -3,7 +3,7 @@
 /**
  *
  */
-module.exports = function(done) {
+//module.exports = function(done) {
    //$.method('user.add').call({
       // name : 'hello1',
       // email : 'xxx@qq.com',
@@ -11,6 +11,12 @@ module.exports = function(done) {
       //nickname: 'test 1',
       //about: 'what it is'
   // }, console.log);
+
+$.method('user.add').call({
+    name:''
+}, console.log);
+
+console.log("message in test1 file......");
 /*
   $.method('user.get').call({
      name: 'hello1',
@@ -18,9 +24,11 @@ module.exports = function(done) {
   }, console.log);
   */
 
+/*
   $.method('user.update').call({
      name : 'hello1',
      nickname: 'lao lei',
-     
+
   }, console.log);
-};
+  */
+//};

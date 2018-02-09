@@ -30,13 +30,12 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^5.0.2",
-    "project-core": "^2.1.0",
+    "project-core": "^0.1.5",
     "serve-static": "^1.13.1",
     "server-static": "^2.0.5"
   },
   "dependencies": {
     "connect-multiparty": "^2.1.0",
-    "methods": "^1.1.2",
     "validator": "^9.4.0"
   }
 }
