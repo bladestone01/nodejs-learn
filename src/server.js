@@ -36,7 +36,9 @@ $.init.load(path.resolve(__dirname, 'init', 'mongodb.js'));
 //init the mongodb model
 $.init.load(path.resolve(__dirname, 'models'));
 
-$.init.load(path.resolve(__dirname, 'methods', 'user.js'));
+//init the middlewares
+$.init.load(path.resolve(__dirname, 'middlewares'));
+$.init.load(path.resolve(__dirname, 'methods'));
 // init the express
 $.init.load(path.resolve(__dirname, 'init', 'express.js'));
 $.init.load(path.resolve(__dirname, 'routes'));

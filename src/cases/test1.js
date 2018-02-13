@@ -12,18 +12,29 @@
       //about: 'what it is'
   // }, console.log);
 
-$.method('user.add').call({
-    name:''
-}, console.log);
-
-console.log("message in test1 file......");
 /*
-  $.method('user.get').call({
-     name: 'hello1',
+$.method('user.add').call({
+    name:'abcedf',
+    email:'abc@123.cn',
+    password:'adasdads',
+}, function(err, ret) {
+   console.log("user add init");
+});
+*/
 
-  }, console.log);
-  */
+//console.log("message in test1 file......");
+/*
+  const  user = $.method('user.get').call({
+     name: 'abcedf',
+     password: '',
 
+  }, function() {
+     console.log("user get request...." + user) ;
+  });
+
+  console.log('user:' + user);
+
+*/
 /*
   $.method('user.update').call({
      name : 'hello1',
