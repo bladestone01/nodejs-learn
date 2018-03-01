@@ -9,9 +9,13 @@ import serveStatic from 'serve-static';
 import bodyParser from 'body-parser';
 import multipart from 'connect-multiparty';
 import session from 'express-session';
+import _RedisStore from 'connect-redis';
+const RedisStore = _RedisStore(session);
 
 module.exports = function(done) {
-    const app = new express();
+    const app =  express();
+
+    $.express = app;
 
     const debug = $.createDebug('express');
 
@@ -44,7 +48,8 @@ module.exports = function(done) {
     });
 
    app.use(session({
-        secret: $.config.get('web.session.secret')
+        secret: $.config.get('web.session.secret'),
+        //store: new RedisStore($.config.get('web.session.redis')),
      }));
 
     app.use(router);

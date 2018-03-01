@@ -87,13 +87,13 @@ module.exports = function(done) {
    });
 
    $.method('topic.comment.add').check({
-      _id: {required: true, validate: (v) => validator.isMongoId(v)},
-      authorId: {required: true, validate: (v) => validator.isMongoId(v)},
+      _id: {required: true, validate: (v) => validator.isMongoId(String(v))},
+      authorId: {required: true, validate: (v) => validator.isMongoId(String(v))},
       content: {required: true},
    });
    $.method('topic.comment.add').register(async function(params) {
        const comment = {
-          cid: new $.utils.ObjectId(),
+          _id: new $.utils.ObjectId(),
           authorId: params.authorId,
           content: params.content,
           createdAt: new Date(),
@@ -104,8 +104,8 @@ module.exports = function(done) {
    });
 
    $.method('topic.comment.get').check({
-      _id: {required: true, validate: (v) => validator.isMongoId(v)},
-      cid: {required: true, validate: (v) => validator.isMongoId(v)},
+      _id: {required: true, validate: (v) => validator.isMongoId(String(v))},
+      cid: {required: true, validate: (v) => validator.isMongoId(String(v))},
    });
    $.method('topic.comment.get').register(async function(params) {
        return $.model.Topic.findOne({
@@ -123,12 +123,11 @@ module.exports = function(done) {
    });
    $.method('topic.comment.delete').register(async function(params) {
       console.log('id:' + params._id);
-      console.log('cid:' + params.cid);
 
        return $.model.Topic.update({_id: params._id}, {
          $pull: {
             comments: {
-               cid: params.cid,
+               _id: params.cid,
             }
           }
        });
