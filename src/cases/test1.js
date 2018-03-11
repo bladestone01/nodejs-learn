@@ -22,7 +22,7 @@ $.method('user.add').call({
 });
 */
 
-//console.log("message in test1 file......");
+console.log("message in test1 file......");
 /*
   const  user = $.method('user.get').call({
      name: 'abcedf',
